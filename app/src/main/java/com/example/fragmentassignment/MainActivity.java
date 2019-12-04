@@ -9,11 +9,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.fragmentassignment.fragments.AreaFragment;
+import com.example.fragmentassignment.fragments.ReverseFragment;
 import com.example.fragmentassignment.fragments.SumFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnSum,btnArea;
+    Button btnSum,btnArea,btnReverse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnSum=findViewById(R.id.btnSum);
         btnArea=findViewById(R.id.btnArea);
+        btnReverse=findViewById(R.id.btnReverse);
 
         btnSum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +43,17 @@ public class MainActivity extends AppCompatActivity {
                 final FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                 AreaFragment areaFragment=new AreaFragment();
                 fragmentTransaction.replace(R.id.fragmentContainer,areaFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        btnReverse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager =getSupportFragmentManager();
+                final FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+                ReverseFragment reverseFragment=new ReverseFragment();
+                fragmentTransaction.replace(R.id.fragmentContainer,reverseFragment);
                 fragmentTransaction.commit();
             }
         });
