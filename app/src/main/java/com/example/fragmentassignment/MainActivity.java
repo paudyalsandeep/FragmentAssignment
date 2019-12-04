@@ -9,13 +9,14 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.fragmentassignment.fragments.AreaFragment;
+import com.example.fragmentassignment.fragments.AutomorphicFragment;
 import com.example.fragmentassignment.fragments.PalindromeFragment;
 import com.example.fragmentassignment.fragments.ReverseFragment;
 import com.example.fragmentassignment.fragments.SumFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnSum,btnArea,btnReverse,btnPalindrome;
+    Button btnSum,btnArea,btnReverse,btnPalindrome,btnAutomorphic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         btnArea=findViewById(R.id.btnArea);
         btnReverse=findViewById(R.id.btnReverse);
         btnPalindrome=findViewById(R.id.btnPalindrome);
+        btnAutomorphic=findViewById(R.id.btnAutomorphic);
 
         btnSum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +69,17 @@ public class MainActivity extends AppCompatActivity {
                 final FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                 PalindromeFragment palindromeFragment=new PalindromeFragment();
                 fragmentTransaction.replace(R.id.fragmentContainer,palindromeFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        btnAutomorphic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager =getSupportFragmentManager();
+                final FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+                AutomorphicFragment automorphicFragment=new AutomorphicFragment();
+                fragmentTransaction.replace(R.id.fragmentContainer,automorphicFragment);
                 fragmentTransaction.commit();
             }
         });
