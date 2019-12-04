@@ -11,12 +11,13 @@ import android.widget.Button;
 import com.example.fragmentassignment.fragments.AreaFragment;
 import com.example.fragmentassignment.fragments.AutomorphicFragment;
 import com.example.fragmentassignment.fragments.PalindromeFragment;
+import com.example.fragmentassignment.fragments.RevStringFragment;
 import com.example.fragmentassignment.fragments.ReverseFragment;
 import com.example.fragmentassignment.fragments.SumFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnSum,btnArea,btnReverse,btnPalindrome,btnAutomorphic;
+    Button btnSum,btnArea,btnReverse,btnPalindrome,btnAutomorphic,btnStringReverse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         btnReverse=findViewById(R.id.btnReverse);
         btnPalindrome=findViewById(R.id.btnPalindrome);
         btnAutomorphic=findViewById(R.id.btnAutomorphic);
+        btnStringReverse=findViewById(R.id.btnStrReverse);
 
         btnSum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +82,17 @@ public class MainActivity extends AppCompatActivity {
                 final FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                 AutomorphicFragment automorphicFragment=new AutomorphicFragment();
                 fragmentTransaction.replace(R.id.fragmentContainer,automorphicFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        btnStringReverse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager =getSupportFragmentManager();
+                final FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+                RevStringFragment revStringFragment=new RevStringFragment();
+                fragmentTransaction.replace(R.id.fragmentContainer,revStringFragment);
                 fragmentTransaction.commit();
             }
         });
