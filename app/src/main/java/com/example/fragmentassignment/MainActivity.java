@@ -9,12 +9,13 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.fragmentassignment.fragments.AreaFragment;
+import com.example.fragmentassignment.fragments.PalindromeFragment;
 import com.example.fragmentassignment.fragments.ReverseFragment;
 import com.example.fragmentassignment.fragments.SumFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnSum,btnArea,btnReverse;
+    Button btnSum,btnArea,btnReverse,btnPalindrome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         btnSum=findViewById(R.id.btnSum);
         btnArea=findViewById(R.id.btnArea);
         btnReverse=findViewById(R.id.btnReverse);
+        btnPalindrome=findViewById(R.id.btnPalindrome);
 
         btnSum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +56,17 @@ public class MainActivity extends AppCompatActivity {
                 final FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                 ReverseFragment reverseFragment=new ReverseFragment();
                 fragmentTransaction.replace(R.id.fragmentContainer,reverseFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        btnPalindrome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager =getSupportFragmentManager();
+                final FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+                PalindromeFragment palindromeFragment=new PalindromeFragment();
+                fragmentTransaction.replace(R.id.fragmentContainer,palindromeFragment);
                 fragmentTransaction.commit();
             }
         });
