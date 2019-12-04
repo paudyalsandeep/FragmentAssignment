@@ -12,11 +12,21 @@
         android:id="@+id/btnArea"
         android:layout_width="121dp"
         android:layout_height="55dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
         android:text="Area of \nCircle"
         app:layout_constraintStart_toEndOf="@+id/btnSum"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAutomorphic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="Automorphic\nNumber"
+        app:layout_constraintStart_toEndOf="@+id/btnPalindrome"
+        app:layout_constraintTop_toBottomOf="@+id/btnArea" />
 
     <Button
         android:id="@+id/btnStrReverse"
@@ -28,16 +38,6 @@
         app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintStart_toEndOf="@+id/btnAutomorphic"
         app:layout_constraintTop_toBottomOf="@+id/btnReverse" />
-
-    <Button
-        android:id="@+id/btnAutomorphic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="48dp"
-        android:text="Automorphic\nNumber"
-        app:layout_constraintStart_toEndOf="@+id/btnPalindrome"
-        app:layout_constraintTop_toBottomOf="@+id/btnArea" />
 
     <Button
         android:id="@+id/btnPalindrome"
